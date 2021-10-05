@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <OutputType>Exe</OutputType>
+      <TargetFramework>net5.0</TargetFramework>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <ApplicationIcon>ASM.ico</ApplicationIcon>
+	  <PublishTrimmed>true</PublishTrimmed>
+	  <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+	  <TrimMode>link</TrimMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="comp.cache" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="comp.cache" />
+  </ItemGroup>
+
+</Project>
