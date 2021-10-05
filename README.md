@@ -24,7 +24,3 @@ To run the commands, open CMD (type `cmd` in the file explorer path) where `AsmT
 ```
 
 _A guide on the manual process can be found [here](https://gamebanana.com/tuts/14400). Thanks, [Torph!](https://github.com/Torphedo)_
-
-### Notice!
-
-[BCML](https://github.com/NiceneNerd/BCML) must be installed for this to function correctly.
