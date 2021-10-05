@@ -129,7 +129,7 @@ namespace AsmToBnp
         {
             Directory.CreateDirectory(root + "\\.create");
             Directory.CreateDirectory(root + "\\.create\\patches");
-            File.WriteAllText(root + "\\.create\\info.json", Info(name, "wiiu", ModCount()));
+            File.WriteAllText(root + "\\.create\\info.json", Info(name, "wiiu"));
 
             if (!File.Exists(GetPath(file) + "rules.txt"))
             {
@@ -178,7 +178,7 @@ namespace AsmToBnp
             return arr[arr.Length - 1];
         }
 
-        public static string Info(string name, string platform, string priority)
+        public static string Info(string name, string platform)
         {
             return "{" +
             "\n    \"name\": \"" + name + "\"," +
@@ -190,8 +190,8 @@ namespace AsmToBnp
             "\n    \"depends\": []," +
             "\n    \"showCompare\": false," +
             "\n    \"showConvert\": false," +
+            "\n    \"priority\": \"\"," +
             "\n    \"platform\": \"" + platform + "\"," +
-            "\n    \"priority\": \"" + priority + "\"," +
             "\n    \"id\": \"\"" +
             "\n}";
         }
@@ -206,21 +206,6 @@ namespace AsmToBnp
                 "description = \"" + description + "\"\n" +
                 "version = 7\n" +
                 "default = " + _default;
-        }
-
-        public static string ModCount()
-        {
-            string result = "0100";
-            double count = Math.Floor(Math.Log10(Directory.GetDirectories(bcml + "\\mods").Length) + 1);
-            int mods = Directory.GetDirectories(bcml + "\\mods").Length - 1;
-            string modCount = mods.ToString();
-            if (count == 1) { result = "010" + modCount; }
-            else if (count == 2) { result = "01" + modCount; }
-            else if (count == 3) { result = "0" + modCount; }
-            else if (count == 4) { result = modCount; }
-            else { Console.WriteLine("Error: BCML mod limit reached."); }
-
-            return result;
         }
 
         public static void Error(string message)
