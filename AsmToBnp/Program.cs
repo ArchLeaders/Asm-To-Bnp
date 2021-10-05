@@ -190,7 +190,6 @@ namespace AsmToBnp
             "\n    \"depends\": []," +
             "\n    \"showCompare\": false," +
             "\n    \"showConvert\": false," +
-            "\n    \"priority\": \"\"," +
             "\n    \"platform\": \"" + platform + "\"," +
             "\n    \"id\": \"\"" +
             "\n}";
