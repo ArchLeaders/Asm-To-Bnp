@@ -55,7 +55,7 @@ namespace AsmToBnp
 
                 if (!File.Exists(root + "\\.cache"))
                 {
-                    ExtractEmbed("comp.cache", root + "\\.cache");
+                    ExtractEmbed("7z.resource", root + "\\.cache");
                 }
 
                 if (args.Length != 0)
